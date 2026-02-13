@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact Ayoub Ed-darkaoui — Web Developer. Get in touch for project inquiries or collaboration." />
+    <meta name="keywords" content="contact, email, inquiry, collaboration, web development" />
+    <meta name="author" content="Ayoub Ed-darkaoui" />
+    <title>Contact — Ayoub Ed-darkaoui</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="code-bg" aria-hidden="true"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar">
+        <nav class="navbar__container">
+            <div class="navbar__logo">
+                <a href="index.html"><span class="logo-text">&lt;Ayoub /&gt;</span></a>
+            </div>
+            <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="navbar__menu">
+                <li><a href="index.html" class="navbar__link">Home</a></li>
+                <li><a href="about.html" class="navbar__link">About</a></li>
+                <li><a href="skills.html" class="navbar__link">Skills</a></li>
+                <li><a href="projects.html" class="navbar__link">Projects</a></li>
+                <li><a href="contact.html" class="navbar__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p class="page-header__subtitle">Let's discuss your next project or collaboration</p>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section class="contact-section section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info reveal">
+                        <h2>Contact Information</h2>
+                        <p>Feel free to reach out through any of these channels. I'm always excited to discuss new
+                            projects and opportunities.</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-method__icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-method__content">
+                                    <h4>Email</h4>
+                                    <a href="mailto:ayoubdarkaoui006@gmail.com">ayoubdarkaoui006@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="contact-method__icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="contact-method__content">
+                                    <h4>WhatsApp</h4>
+                                    <a href="https://wa.me/212711102367" target="_blank" rel="noopener noreferrer">+212
+                                        711-102367</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="contact-method__icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-method__content">
+                                    <h4>Location</h4>
+                                    <a href="https://www.google.com/maps/place/Casablanca,+Morocco" target="_blank"
+                                        rel="noopener noreferrer">Casablanca, Morocco</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h3>Connect With Me</h3>
+                            <div class="social-links">
+                                <a href="https://github.com/ayoub-ed-darkaoui" target="_blank" rel="noopener noreferrer"
+                                    class="social-icon" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.instagram.com/stevven.21?igsh=eW5nNGFmdm9ucHYw&utm_source=qr"
+                                    target="_blank" rel="noopener noreferrer" class="social-icon"
+                                    aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form reveal" id="contactForm">
+                        <h2>Send Me a Message</h2>
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input"
+                                placeholder="Project inquiry" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="7"
+                                placeholder="Tell me about your project..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <p class="form-notice" id="formNotice" style="display: none"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer__section">
+                <h3 class="footer__title">Ayoub Ed-darkaoui</h3>
+                <p class="footer__text">Full-Stack Web Developer crafting modern web experiences with passion and
+                    precision.</p>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__subtitle">Quick Links</h4>
+                <ul class="footer__links">
+                    <li><a href="about.html" class="footer__link">About</a></li>
+                    <li><a href="skills.html" class="footer__link">Skills</a></li>
+                    <li><a href="projects.html" class="footer__link">Projects</a></li>
+                    <li><a href="contact.html" class="footer__link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4 class="footer__subtitle">Connect</h4>
+                <div class="footer__social">
+                    <a href="https://github.com/ayoub-ed-darkaoui" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/stevven.21?igsh=eW5nNGFmdm9ucHYw&utm_source=qr" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 Ayoub Ed-darkaoui. All rights reserved.</p>
+            <div class="footer__bottom-links">
+                <a href="#" class="footer__bottom-link">Privacy Policy</a>
+                <a href="#" class="footer__bottom-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

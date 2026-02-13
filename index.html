@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Professional portfolio of Ayoub Ed-darkaoui. Full-Stack Web Developer showcasing web development projects, skills, and experience." />
+  <meta name="keywords"
+    content="developer, portfolio, web design, HTML, CSS, JavaScript, web development, full-stack" />
+  <meta name="author" content="Ayoub Ed-darkaoui" />
+  <meta name="theme-color" content="#040404" />
+  <meta property="og:title" content="Ayoub Ed-darkaoui — Full-Stack Web Developer" />
+  <meta property="og:description" content="Professional portfolio showcasing web development expertise and projects." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <title>Ayoub Ed-darkaoui — Full-Stack Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Code Background Overlay -->
+  <div class="code-bg" aria-hidden="true"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar">
+    <nav class="navbar__container">
+      <div class="navbar__logo">
+        <a href="index.html">
+          <span class="logo-text">&lt;Ayoub /&gt;</span>
+        </a>
+      </div>
+
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="navbar__menu">
+        <li><a href="index.html" class="navbar__link">Home</a></li>
+        <li><a href="about.html" class="navbar__link">About</a></li>
+        <li><a href="skills.html" class="navbar__link">Skills</a></li>
+        <li><a href="projects.html" class="navbar__link">Projects</a></li>
+        <li><a href="contact.html" class="navbar__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+      <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero__container">
+        <!-- Text Content — Left Side -->
+        <div class="hero__content">
+          <div class="hero__text">
+            <p class="hero__greeting">// welcome to my portfolio</p>
+            <h1 class="hero__title">
+              Hi, I'm<br />
+              <span class="highlight">Ayoub Ed-darkaoui</span>
+            </h1>
+            <p class="hero__subtitle">
+              <span id="typing-text"></span><span class="typing-cursor"></span>
+            </p>
+            <p class="hero__description">
+              I craft beautiful, responsive, and user-friendly web experiences
+              using modern technologies. Specializing in creating performant,
+              accessible solutions that make an impact.
+            </p>
+
+            <div class="hero__cta">
+              <a href="projects.html" class="btn btn--primary">
+                <i class="fas fa-code"></i> View My Work
+              </a>
+              <a href="contact.html" class="btn btn--secondary">
+                <i class="fas fa-paper-plane"></i> Get In Touch
+              </a>
+            </div>
+
+            <div class="scroll-indicator">
+              <svg class="scroll-mouse" width="24" height="36" viewBox="0 0 26 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="1" width="24" height="28" rx="12" stroke="currentColor" stroke-width="2" />
+                <circle cx="13" cy="12" r="2" fill="currentColor" class="scroll-wheel" />
+              </svg>
+              <p class="scroll-text">Scroll to explore</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Image — Center/Right -->
+        <div class="hero__image">
+          <img src="hero.jpg" alt="Ayoub Ed-darkaoui — Full-Stack Web Developer" class="hero__img" loading="eager"
+            decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURED PROJECTS ========== -->
+    <section class="featured-preview">
+      <div class="container">
+        <h2 class="section__title">Featured Work</h2>
+        <p class="section__subtitle">Showcasing my latest and most impactful projects</p>
+
+        <div class="featured-grid reveal-stagger">
+          <!-- Project 1 -->
+          <article class="featured-card reveal">
+            <div class="featured-card__image">
+              <img src="https://images.unsplash.com/photo-1460925895917-aae19106c1d7?w=400&h=300&fit=crop&q=80"
+                alt="Responsive Portfolio Website" loading="lazy" decoding="async" />
+            </div>
+            <div class="featured-card__content">
+              <h3>Responsive Portfolio Website</h3>
+              <p>A modern, fully responsive portfolio designed with clean UI/UX principles and optimized performance.
+              </p>
+              <div class="featured-card__tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+              </div>
+              <a href="projects.html" class="featured-card__link">View Details →</a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="featured-card reveal">
+            <div class="featured-card__image">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop&q=80"
+                alt="Task Management Application" loading="lazy" decoding="async" />
+            </div>
+            <div class="featured-card__content">
+              <h3>Task Management Application</h3>
+              <p>Feature-rich task management app with local storage, filtering, and intuitive user interface.</p>
+              <div class="featured-card__tech">
+                <span>JavaScript</span>
+                <span>LocalStorage</span>
+                <span>Responsive</span>
+              </div>
+              <a href="projects.html" class="featured-card__link">View Details →</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="featured-card reveal">
+            <div class="featured-card__image">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop&q=80"
+                alt="E-Commerce Platform" loading="lazy" decoding="async" />
+            </div>
+            <div class="featured-card__content">
+              <h3>E-Commerce Platform</h3>
+              <p>Full-featured e-commerce solution with product catalog, shopping cart, and checkout functionality.</p>
+              <div class="featured-card__tech">
+                <span>Commerce</span>
+                <span>Cart System</span>
+                <span>Payments</span>
+              </div>
+              <a href="projects.html" class="featured-card__link">View Details →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="featured-preview__cta">
+          <a href="projects.html" class="btn btn--primary btn--lg">View All Projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__content">
+      <div class="footer__section">
+        <h3 class="footer__title">Ayoub Ed-darkaoui</h3>
+        <p class="footer__text">Full-Stack Web Developer crafting modern web experiences with passion and precision.</p>
+      </div>
+
+      <div class="footer__section">
+        <h4 class="footer__subtitle">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="skills.html" class="footer__link">Skills</a></li>
+          <li><a href="projects.html" class="footer__link">Projects</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h4 class="footer__subtitle">Connect</h4>
+        <div class="footer__social">
+          <a href="https://github.com/ayoub-ed-darkaoui" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/stevven.21?igsh=eW5nNGFmdm9ucHYw&utm_source=qr" target="_blank"
+            rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2024 Ayoub Ed-darkaoui. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">Privacy Policy</a>
+        <a href="#" class="footer__bottom-link">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
