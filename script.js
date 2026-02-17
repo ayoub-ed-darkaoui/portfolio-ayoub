@@ -1,22 +1,173 @@
 // ================================================================
-// PORTFOLIO — Unified JavaScript
-// Features: Particles, Navbar, Scroll Reveal, Typing Effect, 
-//           Code Background, Contact Form, Mobile Menu
+// MODERN PORTFOLIO — JavaScript
+// Features: Mobile Menu, Contact Form, Project Modal, 
+//           Scroll Animations, Form Validation
 // ================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
-    initNavbar();
-    initScrollReveal();
-    initCodeBackground();
-    initTypingEffect();
-    initSmoothScroll();
+    initMobileMenu();
     initContactForm();
-    initProficiencyBars();
+    initProjectModals();
+    initSmoothScroll();
 });
 
-// ========== PARTICLE BACKGROUND ==========
-function initParticles() {
+// ========== MOBILE MENU ==========
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (!menuBtn || !mobileMenu) return;
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+}
+
+// ========== CONTACT FORM ==========
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Validation
+        if (!name || !email || !subject || !message) {
+            showMessage(formMessage, 'Please fill in all fields.', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            showMessage(formMessage, 'Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Success message
+        showMessage(formMessage, 'Message sent successfully! Thank you for reaching out.', 'success');
+
+        // Reset form
+        setTimeout(() => {
+            form.reset();
+            formMessage.classList.add('hidden');
+        }, 3000);
+
+        // Here you would typically send the data to a server
+        console.log({ name, email, subject, message });
+    });
+}
+
+function showMessage(element, message, type) {
+    if (!element) return;
+
+    element.textContent = message;
+    element.className = `mt-4 text-center ${type === 'success' ? 'text-green-600' : 'text-red-600'}`;
+    element.classList.remove('hidden');
+}
+
+// ========== PROJECT MODALS ==========
+function initProjectModals() {
+    const modal = document.getElementById('projectModal');
+    const closeBtn = document.getElementById('closeModal');
+    const projectLinks = document.querySelectorAll('.projectLink');
+
+    if (!modal || !projectLinks.length) return;
+
+    const projectData = {
+        1: {
+            title: 'E-Commerce Platform',
+            description: 'A fully functional e-commerce platform built with React, Node.js, and MongoDB. Features include product catalog, shopping cart, user authentication, payment integration with Stripe, and admin dashboard for managing products and orders. The application is fully responsive and optimized for performance.',
+            link: '#projects'
+        },
+        2: {
+            title: 'Mobile Task App',
+            description: 'A cross-platform mobile application for task management built with React Native and Firebase. Features real-time synchronization, offline support, push notifications, and beautiful UI. Users can create, edit, and organize tasks with priority levels and due dates.',
+            link: '#projects'
+        },
+        3: {
+            title: 'Analytics Dashboard',
+            description: 'A real-time data visualization dashboard built with Vue.js and D3.js. Displays business metrics, sales data, and user analytics with interactive charts and filters. Integrated with Python backend for data processing and API endpoints.',
+            link: '#projects'
+        },
+        4: {
+            title: 'Social Network',
+            description: 'A scalable social platform built with Next.js and WebSocket technology. Features include user profiles, real-time messaging, notifications, and feed functionality. Implements authentication, authorization, and real-time updates.',
+            link: '#projects'
+        },
+        5: {
+            title: 'Music Streaming App',
+            description: 'A feature-rich music streaming application built with Flutter. Supports playlist management, audio quality selection, user authentication, and offline downloads. Integrates with REST API for music library and streaming.',
+            link: '#projects'
+        },
+        6: {
+            title: 'AI Chat Assistant',
+            description: 'An intelligent chatbot powered by machine learning and TensorFlow. Features natural language processing, context awareness, and personalized responses. Built with Python backend and web interface for easy integration.',
+            link: '#projects'
+        }
+    };
+
+    projectLinks.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const projectId = btn.getAttribute('data-project');
+            const project = projectData[projectId];
+
+            if (project) {
+                document.getElementById('modalTitle').textContent = project.title;
+                document.getElementById('modalDescription').textContent = project.description;
+                document.getElementById('modalLink').href = project.link;
+                modal.classList.remove('hidden');
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+}
+
+// ========== SMOOTH SCROLL ==========
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href === '#' || href === '') return;
+
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
     const canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
 

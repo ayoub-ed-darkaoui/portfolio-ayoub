@@ -1,9 +1,295 @@
-/* ================================================================
-   PORTFOLIO — Dark Developer-Focused Aesthetic
-   Color Palette: #040404 (bg), #d00000 (red), #6411ad (purple)
-   ================================================================ */
+/* ===== Custom Animations & Styles ===== */
 
-/* ========== CSS VARIABLES ========== */
+/* ===== Fade In Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    }
+}
+
+/* ===== Fade In Classes ===== */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in.delay-3 {
+    animation-delay: 0.6s;
+}
+
+.fade-in.delay-4 {
+    animation-delay: 0.8s;
+}
+
+.fade-in.delay-5 {
+    animation-delay: 1s;
+}
+
+/* ===== Scroll Animations ===== */
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+/* ===== Hover Effects ===== */
+button:hover {
+    animation: glow 0.6s ease-in-out;
+}
+
+.hover-scale {
+    transition: transform 0.3s ease-out;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Skill Cards ===== */
+.skill-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    background-color: #e5e7eb;
+    transform: translateX(8px);
+}
+
+/* ===== Smooth Transitions ===== */
+* {
+    scroll-behavior: smooth;
+}
+
+/* ===== Link Hover Effects ===== */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ===== Button Effects ===== */
+button,
+.btn {
+    transition: all 0.3s ease;
+}
+
+button:active,
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== Form Inputs ===== */
+input,
+textarea {
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+    .fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .skill-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-8px);
+    }
+}
+
+/* ===== Intersection Observer Support ===== */
+.observe {
+    opacity: 0;
+}
+
+.observe.visible {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* ===== Modal Animations ===== */
+.modal-content {
+    animation: slideUp 0.3s ease-out;
+}
+
+#projectModal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ===== Text Selection ===== */
+::selection {
+    background-color: #3b82f6;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* ===== Responsive Grid ===== */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== Loading State ===== */
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* ===== Focus States ===== */
+:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: white;
+    }
+}
 :root {
     /* Core palette */
     --color-bg: #040404;
